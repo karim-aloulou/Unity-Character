@@ -20,10 +20,15 @@ public class Script : MonoBehaviour
         {
             speed /= 3f;
         }
+        if (other.gameObject.tag.Equals("coin"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log('cc');
     }
 
     private void OnTriggerExit(Collider other)
@@ -34,14 +39,6 @@ public class Script : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("coin"))
-        {
-            Destroy(collision.gameObject);
-        }
-    }
 
     void Update()
     {
